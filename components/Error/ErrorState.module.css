@@ -1,0 +1,12 @@
+.error {
+    border: 1px solid var(--danger);
+    border-radius: 4px;
+}
+
+.title {
+    font-size: 1.6rem;
+}
+
+.message {
+    color: var(--danger);
+}
