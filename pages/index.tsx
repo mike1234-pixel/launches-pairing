@@ -1,6 +1,7 @@
 import Container from '../components/Container';
 import Card from '../components/Card';
 import ErrorState from '../components/Error';
+import Header from '../components/Header';
 import { Launch } from '../types/Launch';
 import requestBody from './request'; // the custom query lives here
 import styles from '../styles/Home.module.css';
@@ -48,13 +49,16 @@ function Home({ data, errorMessage }: HomeProps) {
   }
 
   return (
-    <Container>
-      <div className={styles.grid}>
-        {launches.map((launch) => {
-          return <Card key={launch.id} launch={launch} />;
-        })}
-      </div>
-    </Container>
+    <>
+      <Header title="SpaceX Launches" />
+      <Container>
+        <div className={styles.grid}>
+          {launches.map((launch) => {
+            return <Card key={launch.id} launch={launch} />;
+          })}
+        </div>
+      </Container>
+    </>
   );
 }
 

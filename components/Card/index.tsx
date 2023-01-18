@@ -34,7 +34,9 @@ function Card({ launch }: { launch: Launch }) {
           return (
             <div key={failure.time}>
               <Badge success={success} />
-              <p className={styles.failureReason}>Reason: {reason}</p>
+              <p className={styles.failureReason} data-testid="failure-reason">
+                Reason: {reason}
+              </p>
             </div>
           );
         })}

@@ -1,41 +1,11 @@
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
-import { Launch } from '../../types/Launch';
 import Card from './index';
+import { successfulLaunch, failedLaunch } from './mocks';
 
 describe('Card', () => {
   it('should render a card with the correct data', () => {
-    const launch: Launch = {
-      id: '21786521',
-      name: 'Test Launch',
-      date_utc: '2022-01-01T00:00:00.000Z',
-      links: {
-        patch: {
-          small: 'https://images.com/test.jpg',
-          large: 'https://images.com/testlarge.jpg',
-        },
-      },
-      cores: [
-        {
-          core: {
-            serial: 'CORE-123',
-          },
-        },
-      ],
-      payloads: [
-        {
-          type: 'satellite',
-          id: 'PAYLOAD-1',
-        },
-        {
-          type: 'capsule',
-          id: 'PAYLOAD-2',
-        },
-      ],
-      success: true,
-      failures: [],
-    };
-    render(<Card launch={launch} />);
+    render(<Card launch={successfulLaunch} />);
 
     const outputTexts = [
       'Core: CORE-123',
@@ -54,5 +24,11 @@ describe('Card', () => {
     });
 
     expect(screen.queryByText('Reason: ')).not.toBeInTheDocument();
+  });
+
+  it('should render a card with failure reason when the launch is not successful', () => {
+    render(<Card launch={failedLaunch} />);
+
+    expect(screen.getByTestId('failure-reason')).toHaveTextContent('Reason: Engine failure');
   });
 });

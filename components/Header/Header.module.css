@@ -1,0 +1,6 @@
+.header {
+    display: flex;
+    justify-content: center;
+    background: var(--grey-gradient);
+    border-bottom: 1px solid var(--action);
+}
