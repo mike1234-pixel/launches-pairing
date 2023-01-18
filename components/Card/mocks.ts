@@ -1,7 +1,7 @@
 import { Launch } from '../../types/Launch';
 
 export const successfulLaunch: Launch = {
-  id: '21786521',
+  id: '217865212',
   name: 'Test Launch',
   date_utc: '2022-01-01T00:00:00.000Z',
   links: {
@@ -32,7 +32,7 @@ export const successfulLaunch: Launch = {
 };
 
 export const failedLaunch: Launch = {
-  id: '21786521',
+  id: '217865213',
   name: 'Failed Test Launch',
   date_utc: '2022-01-01T00:00:00.000Z',
   links: { patch: { small: null, large: null } },
