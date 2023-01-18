@@ -4,12 +4,11 @@ import ErrorState, { title } from './index';
 
 describe('ErrorState component', () => {
   test('displays the error message', () => {
-    const error = new Error('Network Error');
-    const { getByText } = render(<ErrorState error={error} />);
+    const errorMessage = 'Network Error';
 
-    const message = 'Network Error';
+    const { getByText } = render(<ErrorState errorMessage={errorMessage} />);
 
     expect(getByText(title)).toBeDefined();
-    expect(getByText(message)).toBeDefined();
+    expect(getByText(errorMessage)).toBeDefined();
   });
 });

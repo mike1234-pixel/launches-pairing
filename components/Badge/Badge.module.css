@@ -1,0 +1,19 @@
+.badge {
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 4px;
+    padding: 4px 8px;
+    width: fit-content;
+}
+
+.successBadge {
+    background: var(--success-light);
+    color: var(--success);
+    border-color: var(--success);
+}
+
+.failureBadge {
+    background: var(--danger-light);
+    color: var(--danger);
+    border-color: var(--danger);
+}
