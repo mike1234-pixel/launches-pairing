@@ -1,4 +1,5 @@
 import React from 'react';
+import '@testing-library/jest-dom';
 import { render } from '@testing-library/react';
 import Container from './index';
 
@@ -9,6 +10,6 @@ describe('Container', () => {
         <p>Test</p>
       </Container>
     );
-    expect(getByText('Test')).toBeDefined();
+    expect(getByText('Test')).toBeInTheDocument();
   });
 });

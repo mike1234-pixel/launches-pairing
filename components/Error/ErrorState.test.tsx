@@ -1,4 +1,5 @@
 import React from 'react';
+import '@testing-library/jest-dom';
 import { render } from '@testing-library/react';
 import ErrorState, { title } from './index';
 
@@ -8,7 +9,7 @@ describe('ErrorState component', () => {
 
     const { getByText } = render(<ErrorState errorMessage={errorMessage} />);
 
-    expect(getByText(title)).toBeDefined();
-    expect(getByText(errorMessage)).toBeDefined();
+    expect(getByText(title)).toBeInTheDocument();
+    expect(getByText(errorMessage)).toBeInTheDocument();
   });
 });
