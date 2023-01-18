@@ -20,22 +20,29 @@ function Card({ launch }: { launch: Launch }) {
 
       {launch.payloads.map((payload) => {
         return (
-          <div key={payload.id}>
-            <span>Type: {payload.type}</span>
-            <span>Id: {payload.id}</span>
-          </div>
+          <ul key={payload.id}>
+            <li>Type: {payload.type}</li>
+            <li>Id: {payload.id}</li>
+          </ul>
         );
       })}
 
-      {success && <Badge success={success} />}
+      {success && (
+        <div className={styles.status}>
+          <Badge success={success} />
+        </div>
+      )}
       {!success &&
         failures.map((failure: Failure) => {
           const { reason } = failure;
           return (
             <div key={failure.time}>
-              <Badge success={success} />
+              <div className={styles.status}>
+                <Badge success={success} />
+              </div>
+              <h3 className={styles.failureReason}>Reason for failure:</h3>
               <p className={styles.failureReason} data-testid="failure-reason">
-                Reason: {reason}
+                {reason}
               </p>
             </div>
           );

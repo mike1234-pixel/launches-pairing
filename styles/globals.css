@@ -1,9 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
 :root {
     /* colours */
     --white: #fff;
     --black: #000;
     --grey: #F3F3F3;
-    --grey-dark: #808080;
+    --grey-dark: #bebdbd;
     --text-dark: #444;
     --danger: #d9534f;
     --success: #3d9f54;
@@ -18,19 +20,15 @@
     --action-gradient: linear-gradient(259deg, rgba(0, 135, 255, 1) 0%, rgba(175, 0, 255, 1) 100%);
     --danger-gradient: linear-gradient(259deg, rgba(217, 83, 79, 1) 0%, rgb(235, 129, 126) 100%);
     --grey-gradient: linear-gradient(38deg, rgba(245, 245, 245, 1) 0%, rgba(255, 255, 255, 1) 100%);
+    /* fonts */
+    --font-primary: 'Lato', sans-serif;
 }
 
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
+  font-family: var(--font-primary);
 }
 
 * {

@@ -29,6 +29,6 @@ describe('Card', () => {
   it('should render a card with failure reason when the launch is not successful', () => {
     render(<Card launch={failedLaunch} />);
 
-    expect(screen.getByTestId('failure-reason')).toHaveTextContent('Reason: Engine failure');
+    expect(screen.getByTestId('failure-reason')).toHaveTextContent('Engine failure');
   });
 });

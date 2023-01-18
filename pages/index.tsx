@@ -4,7 +4,7 @@ import ErrorState from '../components/Error';
 import Header from '../components/Header';
 import { Launch } from '../types/Launch';
 import requestBody from './request'; // the custom query lives here
-import styles from '../styles/Home.module.css';
+import styles from './Home.module.css';
 
 // stable data means getStaticProps is a suitable option,
 // I've chosen not to revalidate the data as it's unlikely to refresh within the course of a browser session
@@ -40,7 +40,7 @@ function Home({ data, errorMessage }: HomeProps) {
   // deserialize
   const launches: Launch[] = data && JSON.parse(data).docs;
 
-  if (!data) {
+  if (errorMessage) {
     return (
       <Container>
         <ErrorState errorMessage={errorMessage} />

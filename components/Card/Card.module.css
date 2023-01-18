@@ -3,16 +3,18 @@
     text-align: left;
     color: inherit;
     text-decoration: none;
-    border: 1px solid var(--action);
+    border: 1px solid var(--grey-dark);
     border-radius: 10px;
     transition: color 0.15s ease, border-color 0.15s ease;
     width: 100%;
     background: var(--grey-gradient);
+    position: relative;
 }
 
-.card h2 {
-    margin: 0 0 1rem 0;
-    font-size: 1.5rem;
+.status {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
 }
 
 .title {
