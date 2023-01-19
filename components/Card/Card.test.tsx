@@ -7,19 +7,12 @@ describe('Card', () => {
   it('should render a card with the correct data', () => {
     render(<Card launch={successfulLaunch} />);
 
-    const outputTexts = [
-      'Core: CORE-123',
-      'Payloads',
-      'Type: satellite',
-      'Id: PAYLOAD-1',
-      'Type: capsule',
-      'Id: PAYLOAD-2',
-    ];
+    const outputTexts: string[] = ['Core: CORE-123', 'Payloads', 'Type: satellite', 'Id: PAYLOAD-1', 'Type: capsule', 'Id: PAYLOAD-2'];
 
     expect(screen.getByAltText('Test Launch')).toBeInTheDocument();
-    expect(screen.getByTestId('date')).toHaveTextContent('date: 01/01/2022, 00:00:00');
+    expect(screen.getByTestId('date')).toHaveTextContent('Date: 01/01/2022, 00:00:00');
 
-    outputTexts.forEach((outputText) => {
+    outputTexts.forEach(outputText => {
       expect(screen.getByText(outputText)).toBeInTheDocument();
     });
 

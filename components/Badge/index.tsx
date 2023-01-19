@@ -5,8 +5,8 @@ interface BagdeProps {
   success: boolean;
 }
 
-export const successMessage = 'Success';
-export const failureMessage = 'Failure';
+export const successMessage: string = 'Success';
+export const failureMessage: string = 'Failure';
 
 function Badge({ success }: BagdeProps) {
   return (

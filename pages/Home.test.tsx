@@ -5,7 +5,7 @@ import Home from './index';
 
 describe('Home', () => {
   it('renders error state when data is not present', async () => {
-    const errorMessage = 'Failed to fetch launches';
+    const errorMessage: string = 'Failed to fetch launches';
     const { getByText } = render(<Home errorMessage={errorMessage} />);
 
     await waitFor(() => {

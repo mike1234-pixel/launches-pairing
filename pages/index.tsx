@@ -3,7 +3,7 @@ import Card from '../components/Card';
 import ErrorState from '../components/Error';
 import Header from '../components/Header';
 import { Launch } from '../types/Launch';
-import requestBody from './request'; // the custom query lives here
+import requestBody from './request'; // the query config lives here
 import styles from './Home.module.css';
 
 // stable data means getStaticProps is a suitable option,
@@ -27,7 +27,7 @@ export const getStaticProps = async () => {
   } catch (error) {
     console.error(error);
 
-    return { props: { errorMessage: error.message } };
+    return { props: { errorMessage: (error.message as string) } };
   }
 };
 
@@ -50,10 +50,10 @@ function Home({ data, errorMessage }: HomeProps) {
 
   return (
     <>
-      <Header title="SpaceX Launches" />
+      <Header title='SpaceX Launches' />
       <Container>
         <div className={styles.grid}>
-          {launches.map((launch) => {
+          {launches.map(launch => {
             return <Card key={launch.id} launch={launch} />;
           })}
         </div>

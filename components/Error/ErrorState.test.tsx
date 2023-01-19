@@ -5,7 +5,7 @@ import ErrorState, { title } from './index';
 
 describe('ErrorState component', () => {
   test('displays the error message', () => {
-    const errorMessage = 'Network Error';
+    const errorMessage: string = 'Network Error';
 
     const { getByText } = render(<ErrorState errorMessage={errorMessage} />);
 

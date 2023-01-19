@@ -5,7 +5,7 @@ interface ErrorStateProps {
   errorMessage: string;
 }
 
-export const title = 'Error';
+export const title: string = 'Error';
 
 function ErrorState({ errorMessage }: ErrorStateProps) {
   const router = useRouter();
