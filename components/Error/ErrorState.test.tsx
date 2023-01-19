@@ -4,7 +4,7 @@ import { render } from '@testing-library/react';
 import ErrorState, { title } from './index';
 
 describe('ErrorState component', () => {
-  test('displays the error message', () => {
+  test('displays the title and error message', () => {
     const errorMessage: string = 'Network Error';
 
     const { getByText } = render(<ErrorState errorMessage={errorMessage} />);
