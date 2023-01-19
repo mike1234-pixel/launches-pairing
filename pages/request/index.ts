@@ -14,9 +14,6 @@ const requestBody = {
       success: 1,
       failures: 1,
     },
-    // sort: {
-    //   date_utc: 'desc', this works but newer entries lack images and other data so leaving it
-    // },
     populate: [
       {
         path: 'payloads',

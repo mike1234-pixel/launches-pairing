@@ -10,11 +10,6 @@ yarn dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## Task to be completed
-We would like you to clone this repository and amend the home page to display a list of Cards with the launches data retrieved from the spacex data API. You may take as long as you require to complete the solution to demonstrate your knowledge in creating a web application, however, we ideally would like this returned within 3 days.
-
-Please consider the structure of your code and develop as if you were working in a commercial team environment and test the solution as you see fit.
-
 The restful api that we would like you to use is https://api.spacexdata.com/v5/
 
 You can find docs for this API here: https://github.com/r-spacex/SpaceX-API/tree/master/docs#rspacex-api-docs
@@ -32,5 +27,26 @@ The data that we would like you to display are:
 - display the image from `links.patch.small` in links
 - use `success` and `failures` to show the user the success/failure of launch and reason of failure.
 
-Note
-`flight_number` as a unique property for each launch object.
+## Solution
+
+### Data 
+
+As the data is not subject to frequent change I have opted to use `getStaticProps`.
+
+The request config can be found in ./pages/request/index.tsx. 
+
+I have populated `payloads` and `cores` with the data requested above, and limited my request to include only necessary fields. This is reflected in my custom Launch type in ./types/Launch.ts
+
+I have limited the number of results to 10 using the `limit` option.
+
+The data is sorted in ascending order by default. For the purposes of the task I have not changed this as newer results lack images and other data. 
+
+### Testing
+
+I have opted to write unit tests using Jest/Testing Library as I understand this is primarily the kind of tests I will write on the job. 
+
+To see coverage run `yarn coverage`
+
+### TypeScript 
+
+I have declared types where types would have been ambiguous or where I wanted to enforce a type.
