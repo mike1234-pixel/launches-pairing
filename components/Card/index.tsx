@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import useFormattedDate from '../../hooks/useFormattedDate';
 import { Launch } from '../../types/Launch';
 import Badge from '../Badge';
 import styles from './Card.module.css';
@@ -6,7 +7,7 @@ import styles from './Card.module.css';
 function Card({ launch }: { launch: Launch }) {
   const { name, date_utc, links, success, failures, cores: [{ core: { serial } }], payloads } = launch;
 
-  const date = new Date(date_utc).toLocaleString();
+  const date = useFormattedDate(date_utc)
 
   return (
     <div className={styles.card}>
