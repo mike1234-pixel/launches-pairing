@@ -1,6 +1,6 @@
 import '@testing-library/jest-dom';
 import { render, waitFor } from '@testing-library/react';
-import { failedLaunch, successfulLaunch } from '../components/Card/mocks';
+import { failedLaunch, successfulLaunch } from '../Card/mocks';
 import Home from './index';
 
 describe('Home', () => {

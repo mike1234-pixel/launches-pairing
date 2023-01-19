@@ -1,10 +1,5 @@
-import Container from '../components/Container';
-import Card from '../components/Card';
-import ErrorState from '../components/Error';
-import Header from '../components/Header';
-import { Launch } from '../types/Launch';
-import requestBody from './request'; // the query config lives here
-import styles from './Home.module.css';
+import Home, { HomeProps } from "../components/Home";
+import requestBody from "../components/Home/request";
 
 export const getStaticProps = async () => {
   try {
@@ -29,35 +24,9 @@ export const getStaticProps = async () => {
   }
 };
 
-interface HomeProps {
-  data?: string; // serialized
-  errorMessage?: string;
+function HomePage({ data, errorMessage }: HomeProps) {
+  return <Home data={data} errorMessage={errorMessage} />
 }
 
-function Home({ data, errorMessage }: HomeProps) {
-  // deserialize
-  const launches: Launch[] = data && JSON.parse(data).docs;
+export default HomePage
 
-  if (errorMessage) {
-    return (
-      <Container>
-        <ErrorState errorMessage={errorMessage} />
-      </Container>
-    );
-  }
-
-  return (
-    <>
-      <Header title='SpaceX Launches' />
-      <Container>
-        <div className={styles.grid}>
-          {launches.map(launch => {
-            return <Card key={launch.id} launch={launch} />;
-          })}
-        </div>
-      </Container>
-    </>
-  );
-}
-
-export default Home;
