@@ -11,11 +11,14 @@ function Card({ launch }: { launch: Launch }) {
   return (
     <div className={styles.card}>
       {links.patch.small && <Image src={links.patch.small} alt={name} width={100} height={100} />}
+
       <h2 className={styles.title}>{name}</h2>
+
       <p className={styles.date} data-testid="date">
         Date: {date}
       </p>
       <p className={styles.core}>Core: {serial}</p>
+
       <h3>Payloads</h3>
 
       {payloads.map((payload) => {
@@ -32,6 +35,7 @@ function Card({ launch }: { launch: Launch }) {
           <Badge success={success} />
         </div>
       )}
+
       {!success &&
         failures.map((failure) => {
           const { reason } = failure;

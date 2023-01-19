@@ -6,8 +6,6 @@ import { Launch } from '../types/Launch';
 import requestBody from './request'; // the query config lives here
 import styles from './Home.module.css';
 
-// stable data means getStaticProps is a suitable option,
-// I've chosen not to revalidate the data as it's unlikely to refresh within the course of a browser session
 export const getStaticProps = async () => {
   try {
     const res = await fetch('https://api.spacexdata.com/v5/launches/query', {

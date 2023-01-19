@@ -33,20 +33,18 @@ The data that we would like you to display are:
 
 As the data is not subject to frequent change I have opted to use `getStaticProps`.
 
-The request config can be found in ./pages/request/index.tsx. 
+All data is retrieved from one API call.
 
-I have populated `payloads` and `cores` with the data requested above, and limited my request to include only necessary fields. This is reflected in my custom Launch type in ./types/Launch.ts
+The request config can be found in `./pages/request/index.tsx`. 
 
-I have limited the number of results to 10 using the `limit` option.
+I have populated `payloads` and `cores` with the data requested above, and limited my request to include only necessary fields. This is reflected in my custom Launch type/s in `./types/Launch.ts`.
+
+I have limited the number of results to 10 using the `limit` option in the request body.
 
 The data is sorted in ascending order by default. For the purposes of the task I have not changed this as newer results lack images and other data. 
 
 ### Testing
 
-I have opted to write unit tests using Jest/Testing Library as I understand this is primarily the kind of tests I will write on the job. 
+I have opted to write unit tests using Jest/Testing Library as I understand this is primarily the kind of testing I will write on the job. 
 
-To see coverage run `yarn coverage`
-
-### TypeScript 
-
-I have declared types where types would have been ambiguous or where I wanted to enforce a type.
+For a coverage report run `yarn coverage`
